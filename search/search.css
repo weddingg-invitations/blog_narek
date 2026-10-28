@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* =========================================================
+   Страница поиска
+   ========================================================= */
+.search-page {
+  padding-block: 1.5rem 3rem;
+}
+
+@media (min-width: 768px) {
+  .search-page {
+    padding-block: 2.5rem 4rem;
+  }
+}
+/* ---------- Хлебные крошки (переиспользуем стиль из category, но здесь локально) ---------- */
+.search-page .breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
+
+.search-page .breadcrumbs a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (hover: hover) {
+  .search-page .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+}
+.search-page .breadcrumbs__sep {
+  opacity: 0.55;
+}
+
+/* ---------- Заголовок ---------- */
+.search-header {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.search-header__title {
+  font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+  word-wrap: break-word;
+}
+
+.search-header__count {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ---------- Форма поиска на странице ---------- */
+.search-page__form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--muted);
+  border: 1px solid var(--input);
+  border-radius: 999px;
+  padding: 0.4rem 0.4rem 0.4rem 0.95rem;
+  margin-bottom: 1.75rem;
+  transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
+  min-height: 52px;
+}
+
+.search-page__form:focus-within {
+  background: var(--card);
+  box-shadow: 0 0 0 3px var(--ring);
+  border-color: transparent;
+}
+
+.search-page__icon {
+  color: var(--muted-foreground);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.search-page__form input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 16px;
+  padding: 0.4rem 0;
+}
+
+.search-page__form input::-moz-placeholder {
+  color: var(--muted-foreground);
+}
+
+.search-page__form input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.search-page__form input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-page__form .btn {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0.65rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Подсказка при пустом запросе ---------- */
+.search-hint {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted-foreground);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ---------- Ничего не найдено ---------- */
+.search-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.search-empty__text {
+  color: var(--muted-foreground);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0 0 1.5rem;
+}
+
+/* ---------- На узких экранах — кнопка "Որոնել" вниз ---------- */
+@media (max-width: 480px) {
+  .search-page__form {
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    padding: 0.6rem 0.6rem 0.6rem 0.9rem;
+  }
+  .search-page__form input {
+    flex: 1 1 100%;
+    width: 100%;
+    order: 2;
+  }
+  .search-page__form .btn {
+    order: 3;
+    width: 100%;
+  }
+  .search-page__icon {
+    order: 1;
+  }
+}/*# sourceMappingURL=search.css.map */

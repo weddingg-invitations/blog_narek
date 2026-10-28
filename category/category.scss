@@ -1,0 +1,81 @@
+/* =========================================================
+   Страница рубрики
+   ========================================================= */
+
+.category-page {
+  padding-block: 1.5rem 3rem;
+}
+@media (min-width: 768px) {
+  .category-page {
+    padding-block: 2.5rem 4rem;
+  }
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
+.breadcrumbs a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+@media (hover: hover) {
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+}
+.breadcrumbs__sep {
+  opacity: 0.55;
+}
+#breadcrumbsCurrent {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Заголовок рубрики */
+.category-header {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 2px solid var(--primary);
+}
+.category-header__title {
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+.category-header__count {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Пусто */
+.category-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+
+/* 404 */
+.category-notfound {
+  text-align: center;
+  padding-block: 4rem;
+}
+.category-notfound__title {
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+.category-notfound__text {
+  color: var(--muted-foreground);
+  margin-bottom: 1.75rem;
+}

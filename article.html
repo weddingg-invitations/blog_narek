@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hy" class="is-loading">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Լույս · Luys — Article</title>
+    <meta name="description" content="Լույս · Luys — статья" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="article/article.css" />
+
+    <script>
+        document.documentElement.classList.add("is-loading");
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("is-loading");
+            /* страховка: если через 3 секунды shared.js не убрал класс — убираем сами */
+            setTimeout(() => document.body.classList.remove("is-loading"), 3000);
+        });
+    </script>
+</head>
+
+<body class="is-loading">
+    <main id="main">
+        <article class="article-page" id="articlePage">
+            <div class="container article-page__inner" id="articlePageInner"></div>
+        </article>
+
+        <section class="article-notfound container" id="articleNotFound" hidden>
+            <h1 class="article-notfound__title" data-i18n="notFoundTitle">404 — Չի գտնվել</h1>
+            <p class="article-notfound__text" data-i18n="notFoundText">Այս էջը գոյություն չունի։</p>
+            <a class="btn btn--ghost" href="index.html" data-i18n="backHome">Վերադառնալ գլխավոր</a>
+        </section>
+    </main>
+
+    <script src="shared/shared.js"></script>
+    <script src="article/article.js"></script>
+
+</body>
+
+</html>

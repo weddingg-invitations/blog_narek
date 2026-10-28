@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hy" class="is-loading">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Լույս · Luys — Category</title>
+    <meta name="description" content="Լույս · Luys — рубрика" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="category/category.css" />
+
+    <script>
+        document.documentElement.classList.add("is-loading");
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("is-loading");
+            /* страховка: если через 3 секунды shared.js не убрал класс — убираем сами */
+            setTimeout(() => document.body.classList.remove("is-loading"), 3000);
+        });
+    </script>
+
+
+</head>
+
+<body class="is-loading">
+    <main id="main">
+        <section class="category-page" id="categoryPage">
+            <div class="container">
+
+                <nav class="breadcrumbs" aria-label="Breadcrumbs">
+                    <a href="index.html" data-i18n="backHome">Վերադառնալ գլխավոր</a>
+                    <span class="breadcrumbs__sep">›</span>
+                    <span id="breadcrumbsCurrent"></span>
+                </nav>
+
+                <header class="category-header">
+                    <h1 class="category-header__title" id="categoryTitle"></h1>
+                    <p class="category-header__count" id="categoryCount"></p>
+                </header>
+
+                <div class="grid grid--latest" id="categoryGrid"></div>
+
+                <p class="category-empty" id="categoryEmpty" hidden data-i18n="nothingFound">
+                    Ոչինչ չգտնվեց
+                </p>
+            </div>
+        </section>
+
+        <section class="category-notfound container" id="categoryNotFound" hidden>
+            <h1 class="category-notfound__title" data-i18n="notFoundTitle">404 — Չի գտնվել</h1>
+            <p class="category-notfound__text" data-i18n="notFoundText">Այս էջը գոյություն չունի։</p>
+            <a class="btn btn--ghost" href="index.html" data-i18n="backHome">Վերադառնալ գլխավոր</a>
+        </section>
+    </main>
+
+    <script src="shared/shared.js"></script>
+    <script src="category/category.js"></script>
+
+</body>
+
+</html>

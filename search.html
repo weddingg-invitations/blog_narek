@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hy" class="is-loading">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Լույս · Luys — Որոնում</title>
+    <meta name="description" content="Լույս · Luys — որոնման արդյունքներ" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="search/search.css" />
+
+    <script>
+      document.documentElement.classList.add("is-loading");
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("is-loading");
+        setTimeout(() => document.body.classList.remove("is-loading"), 3000);
+      });
+    </script>
+</head>
+
+<body class="is-loading">
+    <main id="main">
+
+        <section class="search-page">
+            <div class="container">
+
+                <nav class="breadcrumbs" aria-label="Breadcrumbs">
+                    <a href="index.html" data-i18n="backHome">Վերադառնալ գլխավոր</a>
+                    <span class="breadcrumbs__sep">›</span>
+                    <span data-i18n="searchResults">Արդյունքներ</span>
+                </nav>
+
+                <header class="search-header">
+                    <h1 class="search-header__title" id="searchTitle"></h1>
+                    <p class="search-header__count" id="searchCount"></p>
+                </header>
+
+                <!-- Своя строка поиска на странице -->
+                <form class="search-page__form" id="searchPageForm" autocomplete="off">
+                    <span class="search-page__icon">⌕</span>
+                    <input id="searchPageInput" type="search" name="q"
+                           placeholder="Որոնել…" data-i18n-placeholder="searchPlaceholder" />
+                    <button type="submit" class="btn btn--solid" data-i18n="searchButton">Որոնել</button>
+                </form>
+
+                <!-- Подсказка, если запрос пустой -->
+                <p class="search-hint" id="searchHint" hidden data-i18n="searchHint">
+                    Մուտքագրեք որոնման հարցում
+                </p>
+
+                <!-- Результаты -->
+                <div class="grid grid--latest" id="searchGrid"></div>
+
+                <!-- Ничего не найдено -->
+                <div class="search-empty" id="searchEmpty" hidden>
+                    <p class="search-empty__text" data-i18n="nothingFound">Ոչինչ չգտնվեց</p>
+                    <a class="btn btn--ghost" href="index.html" data-i18n="backHome">
+                        Վերադառնալ գլխավոր
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="shared/shared.js"></script>
+    <script src="search/search.js"></script>
+</body>
+
+</html>

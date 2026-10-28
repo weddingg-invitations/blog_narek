@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hy" class="is-loading">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Լույս · Luys — Armenian &amp; English News</title>
+    <meta name="description"
+        content="Լույս · Luys — двуязычный новостной сайт. Главные новости, наука, культура, бизнес." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Լույս · Luys" />
+    <meta property="og:title" content="Լույս · Luys — Armenian &amp; English News" />
+    <meta property="og:description" content="Двуязычный новостной сайт." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script>
+        document.documentElement.classList.add("is-loading");
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("is-loading");
+            setTimeout(() => document.body.classList.remove("is-loading"), 3000);
+        });
+    </script>
+</head>
+
+<body class="is-loading">
+    <main id="main">
+
+        <div id="homeContent">
+
+            <!-- HERO -->
+            <section class="section hero">
+                <div class="container hero__grid">
+                    <article class="hero__lead reveal">
+                        <span class="badge badge--pulse" id="leadCategory"></span>
+                        <a class="hero__media card-hover" href="#" id="leadLink">
+                            <img id="leadImage" src="lead.jpg" width="1200" height="675" alt="" />
+                        </a>
+                        <h1 class="hero__title" id="leadTitle"></h1>
+                        <p class="hero__summary" id="leadSummary"></p>
+                        <p class="meta" id="leadMeta"></p>
+                    </article>
+
+                    <aside class="hero__side reveal">
+                        <h2 class="side__heading" data-i18n="topStories">Գլխավոր</h2>
+                        <div id="topStories"></div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- EDITOR'S PICKS -->
+            <section class="section">
+                <div class="container">
+                    <div class="sliders-stack" id="editorsSliders"></div>
+                </div>
+            </section>
+
+            <!-- DIGESTS -->
+            <section class="section">
+                <div class="container digests digests--eight">
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestEducationTitle"></h3>
+                        <div id="digestEducation"></div>
+                        <a class="digest__more story-link" href="category.html?slug=education" data-i18n="educationMore">Կրթություն</a>
+                    </div>
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestScienceTitle"></h3>
+                        <div id="digestScience"></div>
+                        <a class="digest__more story-link" href="category.html?slug=science" data-i18n="scienceMore">Գիտություն</a>
+                    </div>
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestCultureTitle"></h3>
+                        <div id="digestCulture"></div>
+                        <a class="digest__more story-link" href="category.html?slug=culture" data-i18n="cultureMore">Մշակույթ</a>
+                    </div>
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestSportTitle"></h3>
+                        <div id="digestSport"></div>
+                        <a class="digest__more story-link" href="category.html?slug=sport" data-i18n="sportMore">Սպորտ</a>
+                    </div>
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestUniversityTitle"></h3>
+                        <div id="digestUniversity"></div>
+                        <a class="digest__more story-link" href="category.html?slug=university" data-i18n="universityMore">ՀՀ Բուհեր</a>
+                    </div>
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestCollegeTitle"></h3>
+                        <div id="digestCollege"></div>
+                        <a class="digest__more story-link" href="category.html?slug=college" data-i18n="collegeMore">ՀՀ Քոլեջներ</a>
+                    </div>
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestCenterTitle"></h3>
+                        <div id="digestCenter"></div>
+                        <a class="digest__more story-link" href="category.html?slug=center" data-i18n="centerMore">Ուսումնական կենտրոններ</a>
+                    </div>
+
+                    <div class="digest">
+                        <h3 class="digest__title" id="digestAbroadTitle"></h3>
+                        <div id="digestAbroad"></div>
+                        <a class="digest__more story-link" href="category.html?slug=abroad" data-i18n="abroadMore">Ուսումը արտասահմանում</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- NEWSLETTER -->
+            <section class="section" id="newsletter">
+                <div class="container">
+                    <div class="newsletter reveal">
+                        <span class="newsletter__blob newsletter__blob--a"></span>
+                        <span class="newsletter__blob newsletter__blob--b"></span>
+                        <h2 class="newsletter__title" data-i18n="newsletterTitle">Բաժանորդագրվեք</h2>
+                        <p class="newsletter__text" data-i18n="newsletterText">Ամեն օր՝ գլխավոր նորությունները ձեր
+                            փոստին։</p>
+                        <form class="newsletter__form" id="newsletterForm">
+                            <input type="email" required placeholder="email@example.com"
+                                data-i18n-placeholder="newsletterPlaceholder" />
+                            <button class="btn btn--solid" type="submit"
+                                data-i18n="newsletterButton">Բաժանորդագրվել</button>
+                        </form>
+                        <p class="newsletter__done" id="newsletterDone" hidden data-i18n="newsletterDone">✓
+                            Շնորհակալություն բաժանորդագրման համար</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js"></script>
+    <script src="shared/shared.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

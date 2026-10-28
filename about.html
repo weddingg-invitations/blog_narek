@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hy" class="is-loading">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Լույս · Luys — Մեր մասին</title>
+    <meta name="description" content="Լույս · Luys — Մեր մասին։ Անկախ լրատվական հարթակ՝ երկու լեզվով։" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="about/about.css" />
+
+    <script>
+      document.documentElement.classList.add("is-loading");
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("is-loading");
+        setTimeout(() => document.body.classList.remove("is-loading"), 3000);
+      });
+    </script>
+</head>
+
+<body class="is-loading">
+    <main id="main">
+
+        <!-- HERO -->
+        <section class="about-hero">
+            <div class="container">
+                <nav class="breadcrumbs" aria-label="Breadcrumbs">
+                    <a href="index.html" data-i18n="backHome">Վերադառնալ գլխավոր</a>
+                    <span class="breadcrumbs__sep">›</span>
+                    <span id="breadcrumbsCurrent" data-i18n="about">Մեր մասին</span>
+                </nav>
+
+                <h1 class="about-hero__title" data-i18n="aboutTitle">Մեր մասին</h1>
+                <p class="about-hero__subtitle" data-i18n="aboutSubtitle">
+                    Անկախ լրատվական հարթակ՝ երկու լեզվով
+                </p>
+            </div>
+        </section>
+
+        <!-- BANNER IMAGE -->
+        <section class="about-banner">
+            <div class="container">
+                <figure class="about-banner__media">
+                    <img id="aboutBanner" src="lead.jpg" width="1600" height="900"
+                         alt="" loading="lazy" />
+                </figure>
+            </div>
+        </section>
+
+        <!-- BODY -->
+        <section class="about-body">
+            <div class="container about-body__inner">
+                <p class="about-body__lead" id="aboutBody1"></p>
+                <p id="aboutBody2"></p>
+                <p id="aboutBody3"></p>
+            </div>
+        </section>
+
+        <!-- TEAM -->
+        <section class="about-team">
+            <div class="container">
+                <h2 class="about-team__title" id="aboutTeamTitle"></h2>
+                <div class="about-team__grid" id="aboutTeamGrid"></div>
+            </div>
+        </section>
+
+        <!-- CONTACTS -->
+        <section class="about-contacts">
+            <div class="container about-contacts__inner">
+                <h2 class="about-contacts__title" id="aboutContactsTitle"></h2>
+                <div class="about-contacts__socials" id="aboutSocials"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="shared/shared.js"></script>
+    <script src="about/about.js"></script>
+</body>
+
+</html>
