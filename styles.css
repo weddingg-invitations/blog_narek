@@ -290,9 +290,6 @@ button {
   .brand {
     grid-area: brand;
   }
-  .brand__tagline {
-    display: none;
-  }
   .search {
     grid-area: search;
   }
@@ -353,18 +350,6 @@ button {
     transform: scale(1.6);
   }
 }
-.brand__tagline {
-  color: var(--muted-foreground);
-  font-size: 0.85rem;
-  display: none;
-  white-space: nowrap;
-}
-
-@media (min-width: 900px) {
-  .brand__tagline {
-    display: inline;
-  }
-}
 /* Поиск */
 .search {
   position: relative;
@@ -383,7 +368,7 @@ button {
 
 @media (min-width: 768px) {
   .search {
-    padding: 0.45rem 0.5rem 0.45rem 0.95rem;
+    padding: 0 10px;
   }
 }
 .search:focus-within {
@@ -396,6 +381,10 @@ button {
   color: var(--muted-foreground);
   font-size: 1rem;
   flex-shrink: 0;
+}
+
+.brand__name {
+  width: 120px;
 }
 
 .search input {
@@ -670,6 +659,7 @@ button {
   overflow: hidden;
   border-radius: 0.9rem;
   aspect-ratio: 16/10;
+  max-width: 650px;
 }
 
 @media (min-width: 480px) {
@@ -1265,6 +1255,10 @@ button {
     gap: 2rem;
   }
 }
+.footer__col .brand {
+  max-width: 180px;
+}
+
 .footer__col h4 {
   font-size: 0.9rem;
   font-weight: 800;
@@ -1578,6 +1572,10 @@ button {
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--ink);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .slider-head__subtitle {

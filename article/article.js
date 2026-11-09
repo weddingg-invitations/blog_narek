@@ -82,12 +82,13 @@
         <p>${t(a.summary)}</p>
       </div>
 
-      <a class="article__back" href="index.html" data-i18n="backHome">
-        Վերադառնալ գլխավոր
-      </a>
+      <a class="article__back" href="index.html" data-i18n="backHome">գլխավոր</a>
 
       ${relatedHTML}
     `;
+
+    // ← ВАЖНО: перевести data-i18n-элементы, которые только что появились в DOM
+    window.Luys.renderStaticTexts();
   }
 
   document.addEventListener("DOMContentLoaded", async () => {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Լույս · Luys — Մեր մասին</title>
-    <meta name="description" content="Լույս · Luys — Մեր մասին։ Անկախ լրատվական հարթակ՝ երկու լեզվով։" />
+    <meta name="description" content="Լույս · Luys — Մեր մասին։ Հայաստանի կրթական կյանքը՝ մեկ հարթակում։" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="about/about.css" />
 
     <script>
-      document.documentElement.classList.add("is-loading");
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("is-loading");
-        setTimeout(() => document.body.classList.remove("is-loading"), 3000);
-      });
+        document.documentElement.classList.add("is-loading");
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("is-loading");
+            setTimeout(() => document.body.classList.remove("is-loading"), 3000);
+        });
     </script>
 </head>
 
@@ -32,14 +32,14 @@
         <section class="about-hero">
             <div class="container">
                 <nav class="breadcrumbs" aria-label="Breadcrumbs">
-                    <a href="index.html" data-i18n="backHome">Վերադառնալ գլխավոր</a>
+                    <a href="index.html" data-i18n="backHome">Գլխավոր</a>
                     <span class="breadcrumbs__sep">›</span>
                     <span id="breadcrumbsCurrent" data-i18n="about">Մեր մասին</span>
                 </nav>
 
                 <h1 class="about-hero__title" data-i18n="aboutTitle">Մեր մասին</h1>
                 <p class="about-hero__subtitle" data-i18n="aboutSubtitle">
-                    Անկախ լրատվական հարթակ՝ երկու լեզվով
+                    Հայաստանի կրթական կյանքը՝ մեկ հարթակում
                 </p>
             </div>
         </section>
@@ -48,8 +48,8 @@
         <section class="about-banner">
             <div class="container">
                 <figure class="about-banner__media">
-                    <img id="aboutBanner" src="lead.jpg" width="1600" height="900"
-                         alt="" loading="lazy" />
+                    <img id="aboutBanner" src="assets/araqs_big_logo.jpeg" width="1600" height="900" alt=""
+                        loading="lazy" />
                 </figure>
             </div>
         </section>
@@ -59,15 +59,6 @@
             <div class="container about-body__inner">
                 <p class="about-body__lead" id="aboutBody1"></p>
                 <p id="aboutBody2"></p>
-                <p id="aboutBody3"></p>
-            </div>
-        </section>
-
-        <!-- TEAM -->
-        <section class="about-team">
-            <div class="container">
-                <h2 class="about-team__title" id="aboutTeamTitle"></h2>
-                <div class="about-team__grid" id="aboutTeamGrid"></div>
             </div>
         </section>
 
@@ -75,7 +66,13 @@
         <section class="about-contacts">
             <div class="container about-contacts__inner">
                 <h2 class="about-contacts__title" id="aboutContactsTitle"></h2>
-                <div class="about-contacts__socials" id="aboutSocials"></div>
+                <p>
+                    info@educatioan.am
+                    <br>
+                    arax@education.am
+                    <br>
+                    <b><span id="tell">Հեռ</span> - +37499122291</b>
+                </p>
             </div>
         </section>
 

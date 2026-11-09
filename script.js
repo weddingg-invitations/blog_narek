@@ -77,7 +77,7 @@
     return `
       <div class="slider-block" data-slider-id="${slider.id}">
         <div class="slider-head">
-          <h3 class="slider-head__title">${t(slider.title)}</h3>
+          <a href="#"class="slider-head__title">${t(slider.title)}</h3>
           <span class="slider-head__subtitle">${t(slider.subtitle)}</span>
         </div>
         <div class="swiper news-swiper">
@@ -141,7 +141,7 @@
   }
 
   /* ---------------------------------------------------------
-     Дайджесты (8 штук)
+     Дайджесты (4 штук)
      --------------------------------------------------------- */
   function renderDigests() {
     const byCat = (nameHy) =>
@@ -160,11 +160,7 @@
       { titleId: "#digestEducationTitle",  listId: "#digestEducation",  catHy: "Կրթություն",              uiKey: "educationMore"  },
       { titleId: "#digestScienceTitle",    listId: "#digestScience",    catHy: "Գիտություն",              uiKey: "scienceMore"    },
       { titleId: "#digestCultureTitle",    listId: "#digestCulture",    catHy: "Մշակույթ",                uiKey: "cultureMore"    },
-      { titleId: "#digestSportTitle",      listId: "#digestSport",      catHy: "Սպորտ",                   uiKey: "sportMore"      },
-      { titleId: "#digestUniversityTitle", listId: "#digestUniversity", catHy: "ՀՀ Բուհեր",               uiKey: "universityMore" },
-      { titleId: "#digestCollegeTitle",    listId: "#digestCollege",    catHy: "ՀՀ Քոլեջներ",             uiKey: "collegeMore"    },
-      { titleId: "#digestCenterTitle",     listId: "#digestCenter",     catHy: "Ուսումնական կենտրոններ",   uiKey: "centerMore"     },
-      { titleId: "#digestAbroadTitle",     listId: "#digestAbroad",     catHy: "Ուսումը արտասահմանում",   uiKey: "abroadMore"     }
+      { titleId: "#digestSportTitle",      listId: "#digestSport",      catHy: "Սպորտ",                   uiKey: "sportMore"      }
     ];
 
     pairs.forEach(p => {

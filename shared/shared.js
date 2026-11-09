@@ -31,11 +31,11 @@
         id: r.id,
         image: r.image,
         category: { hy: r.category_hy, en: r.category_en, ru: r.category_ru },
-        title:    { hy: r.title_hy,    en: r.title_en,    ru: r.title_ru },
-        summary:  { hy: r.summary_hy,  en: r.summary_en,  ru: r.summary_ru },
-        author:   { hy: r.author_hy,   en: r.author_en,   ru: r.author_ru },
-        time:     { hy: r.time_hy,     en: r.time_en,     ru: r.time_ru },
-        section:  r.section,
+        title: { hy: r.title_hy, en: r.title_en, ru: r.title_ru },
+        summary: { hy: r.summary_hy, en: r.summary_en, ru: r.summary_ru },
+        author: { hy: r.author_hy, en: r.author_en, ru: r.author_ru },
+        time: { hy: r.time_hy, en: r.time_en, ru: r.time_ru },
+        section: r.section,
         published_at: r.published_at || ""
       };
     },
@@ -76,9 +76,9 @@
 
     getArticlesByCategory(cat, currentLang) {
       if (!cat) return [];
-      const key   = currentLang === "hy" ? "category_hy"
-                  : currentLang === "ru" ? "category_ru"
-                  : "category_en";
+      const key = currentLang === "hy" ? "category_hy"
+        : currentLang === "ru" ? "category_ru"
+          : "category_en";
       const value = cat[currentLang];
       return this.raw.articles
         .filter(a => a[key] === value)
@@ -97,8 +97,8 @@
         .filter(a =>
           a.id !== id &&
           (a.category_hy === current.category_hy ||
-           a.category_en === current.category_en ||
-           a.category_ru === current.category_ru)
+            a.category_en === current.category_en ||
+            a.category_ru === current.category_ru)
         )
         .sort((a, b) => a.sort - b.sort)
         .slice(0, limit)
@@ -111,18 +111,18 @@
         .sort((a, b) => a.sort - b.sort)
         .map(s => ({
           id: s.id,
-          title:    { hy: s.title_hy,    en: s.title_en,    ru: s.title_ru },
+          title: { hy: s.title_hy, en: s.title_en, ru: s.title_ru },
           subtitle: { hy: s.subtitle_hy, en: s.subtitle_en, ru: s.subtitle_ru },
           slides: this.raw.slides
             .filter(sl => sl.slider_id === s.id)
             .sort((a, b) => a.sort - b.sort)
             .map(sl => ({
-              image:    sl.image,
+              image: sl.image,
               category: { hy: sl.category_hy, en: sl.category_en, ru: sl.category_ru },
-              title:    { hy: sl.title_hy,    en: sl.title_en,    ru: sl.title_ru },
-              summary:  { hy: sl.summary_hy,  en: sl.summary_en,  ru: sl.summary_ru },
-              author:   { hy: sl.author_hy,   en: sl.author_en,   ru: sl.author_ru },
-              time:     { hy: sl.time_hy,     en: sl.time_en,     ru: sl.time_ru }
+              title: { hy: sl.title_hy, en: sl.title_en, ru: sl.title_ru },
+              summary: { hy: sl.summary_hy, en: sl.summary_en, ru: sl.summary_ru },
+              author: { hy: sl.author_hy, en: sl.author_en, ru: sl.author_ru },
+              time: { hy: sl.time_hy, en: sl.time_en, ru: sl.time_ru }
             }))
         }));
     }
@@ -131,7 +131,7 @@
   /* =========================================================
      Хелперы
      ========================================================= */
-  const $  = (s, r = document) => r.querySelector(s);
+  const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
   /* =========================================================
@@ -143,12 +143,12 @@
 
   function readInitialLang() {
     let saved = null;
-    try { saved = localStorage.getItem(LANG_KEY); } catch (e) {}
+    try { saved = localStorage.getItem(LANG_KEY); } catch (e) { }
     if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
     return DEFAULT_LANG;
   }
   function persistLang(newLang) {
-    try { localStorage.setItem(LANG_KEY, newLang); } catch (e) {}
+    try { localStorage.setItem(LANG_KEY, newLang); } catch (e) { }
   }
 
   /* =========================================================
@@ -179,11 +179,11 @@
   /* =========================================================
      Ссылки
      ========================================================= */
-  function articleUrl(id)   { return `article.html?id=${encodeURIComponent(id)}`; }
-  function categoryUrl(slug){ return `category.html?slug=${encodeURIComponent(slug)}`; }
-  function aboutUrl()       { return "about.html"; }
-  function homeUrl()        { return "index.html"; }
-  function searchUrl(q)     { return `search.html?q=${encodeURIComponent(q)}`; }
+  function articleUrl(id) { return `article.html?id=${encodeURIComponent(id)}`; }
+  function categoryUrl(slug) { return `category.html?slug=${encodeURIComponent(slug)}`; }
+  function aboutUrl() { return "about.html"; }
+  function homeUrl() { return "index.html"; }
+  function searchUrl(q) { return `search.html?q=${encodeURIComponent(q)}`; }
 
   /* =========================================================
      Разметка: header и footer
@@ -194,10 +194,10 @@
         <div class="container header-inner">
           <div class="header-row header-row--top">
             <a class="brand" href="${homeUrl()}">
-              <span class="brand__name" data-i18n="brand">Լույս</span>
-              <span class="brand__dot"></span>
+              <span class="brand__name" data-i18n="brand">
+                <img src="./assets/araqs_logo_min.jpg">
+              </span>
             </a>
-            <span class="brand__tagline" data-i18n="tagline">Լույսը՝ ամեն օր</span>
 
             <div class="search" id="searchWrap">
               <span class="search__icon">⌕</span>
@@ -241,10 +241,11 @@
         <div class="container footer__grid">
           <div class="footer__col">
             <a class="brand" href="${homeUrl()}">
-              <span class="brand__name" data-i18n="brand">Լույս</span>
-              <span class="brand__dot"></span>
+            <span class="brand__name" data-i18n="brand">
+            <img src="assets/araqs_logo_min.jpg">
+              </span>
             </a>
-            <p class="footer__about" data-i18n="footerAbout">Անկախ լրատվական հարթակ՝ երկու լեզվով։</p>
+            <p class="footer__about" data-i18n="footerAbout">Հայաստանի կրթական կյանքը՝ մեկ հարթակում։</p>
           </div>
           <div class="footer__col">
             <h4 data-i18n="footerSections">Բաժիններ</h4>
@@ -273,7 +274,7 @@
           </div>
         </div>
         <div class="container footer__bottom">
-          <p>© <span id="year"></span>«Արաքս» հրատարակչություն</p>
+          <p>© <span id="year"> </span> <span class="footer__bottom_copy">«Արաքս» հրատարակչություն</span></p>
         </div>
       </footer>
     `;
@@ -303,12 +304,6 @@
       if (ui[key]) el.placeholder = t(ui[key]);
     });
 
-    const brandName = $(".brand__name");
-    if (brandName) brandName.textContent = t(ui.brand);
-
-    const tagline = $(".brand__tagline");
-    if (tagline) tagline.textContent = t(ui.tagline);
-
     const searchInput = $("#searchInput");
     if (searchInput) searchInput.placeholder = t(ui.searchPlaceholder);
 
@@ -320,6 +315,9 @@
 
     const about = $(".footer__about");
     if (about) about.textContent = t(ui.footerAbout);
+
+    const footer__bottom_copy = $(".footer__bottom_copy");
+    if (footer__bottom_copy) footer__bottom_copy.textContent = t(ui.footerAbout);
 
     const footerHeads = $$(".footer__col h4");
     if (footerHeads[0]) footerHeads[0].textContent = t(ui.footerSections);
@@ -370,7 +368,7 @@
     const nlDone = $("#newsletterDone");
     if (nlDone) nlDone.textContent = t(ui.newsletterDone);
   }
-
+  
   /* =========================================================
      Ticker — 8 самых свежих по published_at, кликабельные
      ========================================================= */
@@ -451,9 +449,9 @@
      Поиск с подсказками
      ========================================================= */
   function bindSearchSuggest() {
-    const input  = $("#searchInput");
-    const clear  = $("#searchClear");
-    const wrap   = $("#searchWrap");
+    const input = $("#searchInput");
+    const clear = $("#searchClear");
+    const wrap = $("#searchWrap");
     if (!input || !wrap) return;
 
     let suggest = $("#searchSuggest");
@@ -612,8 +610,8 @@
     try {
       await DB.init();
 
-      state.ui         = DB.getUI();
-      state.nav        = DB.getNav();
+      state.ui = DB.getUI();
+      state.nav = DB.getNav();
       state.categories = DB.getCategories();
 
       state.lang = readInitialLang();

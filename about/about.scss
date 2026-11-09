@@ -38,7 +38,8 @@
 }
 
 .about-banner__media {
-  margin: 0;
+  max-width: 60%;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 1rem;
   aspect-ratio: 16 / 7;
@@ -94,90 +95,6 @@
     font-size: 1.3rem;
   }
 }
-
-/* ---------- TEAM ---------- */
-.about-team {
-  padding-block: 2rem;
-  background: var(--mist);
-}
-@media (min-width: 768px) {
-  .about-team {
-    padding-block: 3rem;
-  }
-}
-
-.about-team__title {
-  font-size: clamp(1.25rem, 4vw, 1.8rem);
-  font-weight: 800;
-  text-align: center;
-  margin: 0 0 1.75rem;
-  color: var(--ink);
-}
-
-.about-team__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-}
-@media (min-width: 700px) {
-  .about-team__grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-.about-team__card {
-  text-align: center;
-  background: var(--card);
-  border-radius: 1rem;
-  padding: 1.25rem 0.85rem;
-  transition:
-    transform 0.35s var(--ease),
-    box-shadow 0.35s var(--ease);
-}
-@media (hover: hover) {
-  .about-team__card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px color-mix(in oklab, var(--primary) 40%, transparent);
-  }
-}
-
-.about-team__avatar {
-  width: 92px;
-  height: 92px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 0.85rem;
-  background: var(--muted);
-  border: 3px solid var(--primary);
-}
-@media (min-width: 640px) {
-  .about-team__avatar {
-    width: 108px;
-    height: 108px;
-  }
-}
-.about-team__avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.about-team__name {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 0.25rem;
-  color: var(--ink);
-}
-
-.about-team__role {
-  font-size: 0.85rem;
-  color: var(--muted-foreground);
-  margin: 0;
-}
-
 /* ---------- CONTACTS ---------- */
 .about-contacts {
   padding-block: 2.5rem 3.5rem;
@@ -190,6 +107,15 @@
 
 .about-contacts__inner {
   text-align: center;
+  display: flex;
+
+  p {
+    margin: 0;
+    margin-top: 0.3rem;
+  }
+  .about-contacts__title {
+    margin-right: 2rem;
+  }
 }
 
 .about-contacts__title {
@@ -199,48 +125,33 @@
   color: var(--ink);
 }
 
-.about-contacts__socials {
+/* Хлебные крошки */
+.breadcrumbs {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
 }
 
-.about-contacts__socials a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  min-height: 48px;
-  padding: 0.75rem 1.35rem;
-  border-radius: 999px;
-  background: var(--card);
-  border: 1.5px solid var(--border);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 0.9rem;
+.breadcrumbs a {
+  color: var(--primary);
+  font-weight: 600;
   text-decoration: none;
-  transition:
-    transform 0.25s var(--ease),
-    background 0.25s var(--ease),
-    color 0.25s var(--ease),
-    border-color 0.25s var(--ease);
 }
+
 @media (hover: hover) {
-  .about-contacts__socials a:hover {
-    transform: translateY(-2px);
-    background: var(--primary);
-    border-color: var(--primary);
-    color: var(--primary-foreground);
+  .breadcrumbs a:hover {
+    text-decoration: underline;
   }
 }
-.about-contacts__socials a:active {
-  transform: scale(0.98);
+.breadcrumbs__sep {
+  opacity: 0.55;
 }
 
-.about-contacts__socials .abbr {
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  opacity: 0.9;
+#breadcrumbsCurrent {
+  color: var(--ink);
+  font-weight: 700;
 }

@@ -281,9 +281,7 @@ button {
   .brand {
     grid-area: brand;
   }
-  .brand__tagline {
-    display: none;
-  }
+
   .search {
     grid-area: search;
   }
@@ -348,18 +346,6 @@ button {
   }
 }
 
-.brand__tagline {
-  color: var(--muted-foreground);
-  font-size: 0.85rem;
-  display: none;
-  white-space: nowrap;
-}
-@media (min-width: 900px) {
-  .brand__tagline {
-    display: inline;
-  }
-}
-
 /* Поиск */
 .search {
   position: relative;
@@ -380,7 +366,7 @@ button {
 }
 @media (min-width: 768px) {
   .search {
-    padding: 0.45rem 0.5rem 0.45rem 0.95rem;
+    padding: 0 10px;
   }
 }
 .search:focus-within {
@@ -392,6 +378,9 @@ button {
   color: var(--muted-foreground);
   font-size: 1rem;
   flex-shrink: 0;
+}
+.brand__name {
+  width: 120px;
 }
 .search input {
   flex: 1;
@@ -652,6 +641,7 @@ button {
   overflow: hidden;
   border-radius: 0.9rem;
   aspect-ratio: 16 / 10;
+  max-width: 650px;
 }
 @media (min-width: 480px) {
   .hero__media {
@@ -1241,6 +1231,11 @@ button {
     gap: 2rem;
   }
 }
+.footer__col{
+  .brand{
+    max-width: 180px;
+  }
+}
 
 .footer__col h4 {
   font-size: 0.9rem;
@@ -1282,7 +1277,7 @@ button {
   place-items: center;
   font-size: 0.8rem;
   font-weight: 800;
-  transition: transform 0.3s var(--ease),
+  transition: transform 0.3s var(--ease);
 }
 @media (hover: hover) {
   .socials a:hover {
@@ -1568,6 +1563,10 @@ button {
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--ink);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .slider-head__subtitle {
